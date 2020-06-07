@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  testcafe:
+    image: testcafe/testcafe
+    volumes:
+      - ./test:/usr/src/
+    command: >
+      "chromium:headless --no-sandbox"
+      /usr/src/*
