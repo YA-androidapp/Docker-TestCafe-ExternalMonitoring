@@ -51,3 +51,16 @@ test("ユーザー検索", async (t) => {
     fullPage: true,
   });
 });
+
+// 環境変数の利用
+//   テスト実行前に、.envに環境変数を設定しておく
+test("環境変数の利用", async (t) => {
+  // console.log("process.env.USER_NAME: " + process.env.USER_NAME);
+  await t.navigateTo(
+    "https://github.com/" + (process.env.USER_NAME ? process.env.USER_NAME : "")
+  );
+  await t.takeScreenshot({
+    path: "YA_env.png",
+    fullPage: true,
+  });
+});

@@ -2,6 +2,8 @@ version: "3"
 
 services:
   testcafe:
+    environment:
+      USER_NAME: ${USER_NAME}
     image: testcafe/testcafe
     volumes:
       - ./test:/usr/src/
